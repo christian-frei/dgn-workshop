@@ -24,4 +24,16 @@ public class AddResourceIT {
         System.out.println("entity = " + entity);
         assertThat(entity.getInt("result")).isEqualTo(100);
     }
+
+    @Test
+    @DisplayName("add negative numbers")
+    void addNegative() {
+        var response = this.addResourceClient.add(-10, -20);
+        assertThat(response.getStatus()).isEqualTo(400);
+        var entity = response.readEntity(JsonObject.class);
+
+        System.out.println("entity = " + entity);
+        assertThat(entity.getString("error_code")).isEqualTo("001");
+        assertThat(entity.getString("error")).isEqualTo("stay positive");
+    }
 }

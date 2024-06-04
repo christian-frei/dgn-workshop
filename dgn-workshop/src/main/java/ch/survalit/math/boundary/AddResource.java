@@ -1,6 +1,6 @@
 package ch.survalit.math.boundary;
 
-import ch.survalit.math.WorkshopException;
+import ch.survalit.exception.control.WorkshopException;
 import ch.survalit.math.control.Adder;
 import jakarta.json.Json;
 import jakarta.ws.rs.GET;
@@ -18,7 +18,7 @@ public class AddResource {
     public Response add(@QueryParam("a") int a, @QueryParam("b") int b) {
 
         if (a < 0 || b < 0) {
-            throw new WorkshopException(Response.Status.BAD_REQUEST, "stay positive");
+            throw new WorkshopException(Response.Status.BAD_REQUEST, "001", "stay positive");
         }
 
         var result = Adder.add(a, b);

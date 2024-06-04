@@ -1,4 +1,4 @@
-package ch.survalit.math;
+package ch.survalit.exception.control;
 
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
