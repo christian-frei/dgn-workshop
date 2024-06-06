@@ -12,6 +12,7 @@ import jakarta.ws.rs.core.Response;
 
 @Path("/math/add")
 @Produces(MediaType.APPLICATION_JSON)
+// @RequestScoped is implied
 public class AddResource {
 
     @GET

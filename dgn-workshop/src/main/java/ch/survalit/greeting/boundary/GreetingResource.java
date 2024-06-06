@@ -11,6 +11,7 @@ import jakarta.ws.rs.core.Response;
 
 @Path("/greet")
 @Produces(MediaType.APPLICATION_JSON)
+// @RequestScoped is implied
 public class GreetingResource {
 
     @Inject
